@@ -17,17 +17,24 @@
               </div>
               <form class="navbar-form navbar-left" role="search">
                 <div class="form-group">
-                  <input type="text" class="form-control" placeholder="Search">
+                  <input type="text" class="form-control" placeholder="Buscar artistas o álbumes">
                 </div>
-                <button type="submit" class="btn btn-default">Submit</button>
+                <button type="submit" class="btn btn-default">Buscar</button>
               </form>
             </div>
           </nav>
           <section id="presentation" class="row">
           <div class="col-xs-12">
             <div class="page-header">
-              <h1>Example page header <small>Subtext for header</small></h1>
-            </div></small></h>
+              <h1>¡Bienvenidx al catálogo de música libre del Uruguay!</h1>
+            </div>
+            <p class="lead">
+            Musicalibre.uy es un catálogo de álbumes publicados bajo licencias libres y copyleft, es decir, que admiten la modificación, copia y distribución.
+            </p>
+            <p class="lead">
+            Aquí puede encontrarse categorizadas las obras por título, artista y tipo de licencia.
+            </p>
+            <button type="button" class="open-catalog btn btn-info btn-lg">ACCEDEDER AL CATÁLOGO</button>
           </div>
           </section>
           <div id="cover-container" class="row">

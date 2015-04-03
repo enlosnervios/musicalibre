@@ -3,7 +3,7 @@ add_theme_support( 'title-tag' );
 
 add_theme_support( 'post-thumbnails' );
 
-function musicalibre_styles() {
-  wp_enqueue_style( 'main', get_template_directory_uri() . '/assets/css/main.css', array(), '1.0', true );
+function musicalibre_scripts() {
+  wp_enqueue_script( 'main', get_template_directory_uri() . '/assets/js/main.js', array( 'jquery' ) );
 }
-//add_action( 'wp_enqueue_scripts', 'musicalibre_styles');
+add_action( 'wp_enqueue_scripts', 'musicalibre_scripts');
