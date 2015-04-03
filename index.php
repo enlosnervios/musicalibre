@@ -17,7 +17,7 @@
               </div>
               <form class="navbar-form navbar-left" role="search">
                 <div class="form-group">
-                  <input type="text" class="form-control" placeholder="Buscar artistas o álbumes">
+                  <input id="search-bar" type="text" class="form-control" placeholder="Buscar artistas o álbumes">
                 </div>
                 <button type="submit" class="btn btn-default">Buscar</button>
               </form>
@@ -38,6 +38,7 @@
           </div>
           </section>
           <div id="cover-container" class="row">
+            <div id="cover-overlay"></div>
             <?php
               if ( have_posts() ) :
                 while ( have_posts() ) : the_post(); ?>
