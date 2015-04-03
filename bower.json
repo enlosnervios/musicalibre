@@ -1,0 +1,24 @@
+{
+  "name": "Musicalibre",
+  "version": "1.0.0",
+  "authors": [
+    "En Los Nervios <fanzine@enlosnervios.org>"
+  ],
+  "moduleType": [
+    "globals",
+    "node"
+  ],
+  "license": "AGPL",
+  "homepage": "http://musicalibre.uy",
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ],
+  "dependencies": {
+    "bootstrap-sass": "~3.3.4"
+  }
+}
+
