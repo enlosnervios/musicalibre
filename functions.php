@@ -98,7 +98,7 @@ function album_metadata_callback( $post ) {
         <?php
         endwhile;
       else : ?>
-        <option value="Desconocido" selected="selected">
+        <option value="Desconocido" selected="selected">Desconocido</option>
       <?php
       endif; ?>
     </select>
@@ -111,7 +111,18 @@ function album_metadata_callback( $post ) {
 
   <p>
     <label for="meta-label">Sello</label>
-    <input type="text" name="meta-label" id="meta-text" value="<?php if ( isset ( $album_metadata['meta-label'] ) ) echo $album_metadata['meta-label'][0]; ?>" />
+    <select name="meta-select" id="meta-select">
+    <?php
+      if ( $labels->have_posts() ):
+        while ( $labels->have_posts() ) : $labels->the_post(); ?>
+          <option value="<?php echo $post->post_title; ?>" <?php if ( isset ( $album_metadata['meta-label'] ) ) selected( $album_metadata['meta-label'][0], '<?php echo $post->post_title; ?>' ); ?>><?php the_title(); ?></option>';
+        <?php
+        endwhile;
+      else : ?>
+        <option value="Desconocido" selected="selected">Desconocido</option>
+      <?php
+      endif; ?>
+    </select>
   </p>
 
   <p>
