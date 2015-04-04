@@ -15,6 +15,8 @@
   </div>
 </section>
 
-<?php get_template_part( 'loop', 'main' ); ?>
+<?php
 
-<?php get_footer() ?>
+get_template_part( 'loop', 'main' );
+
+get_footer() ?>
