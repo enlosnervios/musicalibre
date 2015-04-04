@@ -4,7 +4,21 @@
 
 body {
   font-family: 'Open Sans', sans-serif;
-  overflow: hidden;
+  padding-bottom: 30px;
+}
+
+dl {
+  margin-bottom: 0px !important;
+}
+
+#search-form  {
+  #search-bar {
+    border-right: 0px;
+  }
+
+  .dashicons-search {
+    color: #ccc;
+  }
 }
 
 #presentation {
@@ -19,6 +33,7 @@ body {
 
 #cover-container {
   margin-bottom: $navbar-height;
+  margin-top: 20px;
 }
 
 #cover-overlay {
@@ -30,6 +45,12 @@ body {
   z-index: 900;
 }
 
+#footer {
+  font-size: small;
+  min-height: 30px !important;
+  padding-top: 5px;
+}
+
 .cover {
   background: #eee;
   padding-bottom: 16%;
@@ -38,3 +59,17 @@ body {
   background-size: cover;
 }
 
+.section-heading {
+  clear: both;
+}
+
+.album-info {
+  background: #111;
+  color: #f1f1f1;
+  padding: 5px 10px;
+  position: absolute;
+  opacity: 0.9;
+  bottom: 10px;
+  left: 0;
+  width: 100%;
+}
