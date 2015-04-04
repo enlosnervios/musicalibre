@@ -27,7 +27,7 @@ function artist_post_type() {
       ),
       'public' => true,
       'has_archie' => false,
-      'supports' => array( 'title', 'editor', 'thumbnail' )
+      'supports' => array( 'title', 'editor' )
     )
   );
 }
@@ -51,6 +51,8 @@ add_action( 'init', 'label_post_type' );
 
 function musicalibre_scripts() {
   wp_enqueue_script( 'main', get_template_directory_uri() . '/assets/js/main.js', array( 'jquery' ) );
+
+  wp_enqueue_style( 'main-style', get_template_directory_uri() . '/assets/css/main.css', array( 'dashicons' ) );
 
   wp_localize_script( 'main', 'Main', array( 'ajaxurl' => admin_url( 'admin-ajax.php' )));
 }
