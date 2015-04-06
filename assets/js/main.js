@@ -8,7 +8,7 @@ jQuery( document ).ready( function() {
   });
 
   function developCatalog() {
-    jQuery( '#presentation' ).animate( { top: '-245px' }, 500 );
+    jQuery( '#presentation' ).animate( { top: '-270px' }, 500 );
     jQuery( '#cover-overlay' ).fadeOut( 800 );
   }
 
