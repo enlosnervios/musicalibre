@@ -50,7 +50,9 @@ add_action( 'init', 'label_post_type' );
 
 
 function musicalibre_scripts() {
-  wp_enqueue_script( 'main', get_template_directory_uri() . '/assets/js/main.js', array( 'jquery' ) );
+  wp_register_script( 'tagsinput', get_template_directory_uri() . '/bower_components/tagsinput/dist/bootstrap-tagsinput.js' );
+
+  wp_enqueue_script( 'main', get_template_directory_uri() . '/assets/js/main.js', array( 'jquery', 'tagsinput' ) );
 
   wp_enqueue_style( 'main-style', get_template_directory_uri() . '/assets/css/main.css', array( 'dashicons' ) );
 
@@ -92,11 +94,11 @@ function album_metadata_callback( $post ) {
 
   <p>
     <label for="meta-artist">Artista</label>
-    <select name="meta-select" id="meta-select">
+    <select name="meta-artist" id="meta-artist">
     <?php
       if ( $artists->have_posts() ):
         while ( $artists->have_posts() ) : $artists->the_post(); ?>
-          <option value="<?php echo $post->post_title; ?>" <?php if ( isset ( $album_metadata['meta-artist'] ) ) selected( $album_metadata['meta-artist'][0], '<?php echo $post->post_title; ?>' ); ?>><?php the_title(); ?></option>';
+          <option value="<?php the_title(); ?>" <?php if ( isset ( $album_metadata['meta-artist'] ) ) selected( $album_metadata['meta-artist'][0], the_title( '', '',  false ) ); ?>><?php the_title(); ?></option>
         <?php
         endwhile;
       else : ?>
@@ -113,11 +115,11 @@ function album_metadata_callback( $post ) {
 
   <p>
     <label for="meta-label">Sello</label>
-    <select name="meta-select" id="meta-select">
+    <select name="meta-label" id="meta-label">
     <?php
       if ( $labels->have_posts() ):
         while ( $labels->have_posts() ) : $labels->the_post(); ?>
-          <option value="<?php echo $post->post_title; ?>" <?php if ( isset ( $album_metadata['meta-label'] ) ) selected( $album_metadata['meta-label'][0], '<?php echo $post->post_title; ?>' ); ?>><?php the_title(); ?></option>';
+          <option value="<?php the_title(); ?>" <?php if ( isset ( $album_metadata['meta-label'] ) ) selected( $album_metadata['meta-label'][0], the_title( '', '',  false ) ); ?>><?php the_title(); ?></option>
         <?php
         endwhile;
       else : ?>
