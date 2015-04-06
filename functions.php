@@ -50,9 +50,7 @@ add_action( 'init', 'label_post_type' );
 
 
 function musicalibre_scripts() {
-  wp_register_script( 'tagsinput', get_template_directory_uri() . '/bower_components/tagsinput/dist/bootstrap-tagsinput.js' );
-
-  wp_enqueue_script( 'main', get_template_directory_uri() . '/assets/js/main.js', array( 'jquery', 'tagsinput' ) );
+  wp_enqueue_script( 'main', get_template_directory_uri() . '/assets/js/main.js', array( 'jquery' ) );
 
   wp_enqueue_style( 'main-style', get_template_directory_uri() . '/assets/css/main.css', array( 'dashicons' ) );
 
@@ -64,7 +62,8 @@ function search_data() {
   $search_term = $_POST['search_term'];
   $search = new WP_Query( array(
     's' => $search_term,
-    'post_type' => 'album'
+    'post_type' => 'album',
+    'post_status' => 'publish'
   ) );
 
   if ( $search->have_posts() ) :
@@ -88,8 +87,8 @@ function album_metadata_callback( $post ) {
   wp_nonce_field( basename( __FILE__ ), 'album_nonce' );
 
   $album_metadata = get_post_meta( $post->ID );
-  $artists = new WP_Query( array( 'post_type' => 'artist' ) );
-  $labels  = new WP_Query( array( 'post_type' => 'label' ) );
+  $artists = new WP_Query( array( 'post_type' => 'artist', 'post_status' => 'publish', nopaging => true ) );
+  $labels  = new WP_Query( array( 'post_type' => 'label', 'post_status' => 'publish', nopaging => true ) );
   ?>
 
   <p>
