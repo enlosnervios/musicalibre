@@ -1,34 +1,31 @@
 <div id="latest-releases" class="col-md-4">
   <?php
-    $latest_releases = new WP_Query( array( 'post_type' => 'album', 'posts_per_page' => 6 ) );
+  $latest_releases = new WP_Query( array( 'post_type' => 'album', 'posts_per_page' => 5 ) );
 
-    if ( $latest_releases->have_posts() ) : ?>
-      <ul class="list-group">
-        <li class="list-group-item"><strong>Álbumes más recientes</strong></li>
+  if ( $latest_releases->have_posts() ) : ?>
+      <div class="list-group">
+        <a class="list-group-item latest-releases-heading" href="#"><strong>Álbumes más recientes</strong></a>
 
         <?php
         while ( $latest_releases->have_posts() ) : $latest_releases->the_post(); ?>
 
-          <li class="album-item list-group-item">
+          <a class="album-item list-group-item" href="#">
             <div class="media">
               <div class="media-left">
-                <a href="<?php the_permalink(); ?>">
-                  <?php echo get_the_post_thumbnail( $post->ID, array( 50, 50 ), array( 'class' => "media-object" ) ); ?>
-                </a>
+                <?php echo get_the_post_thumbnail( $post->ID, array( 50, 50 ), array( 'class' => "media-object" ) ); ?>
               </div>
               <div class="media-body">
-                <h4 class="media-heading"><?php the_title(); ?></h4>
+                <p class="media-heading"><strong><?php the_title(); ?></strong></p>
+                <p><?php echo get_post_meta( $post->ID, 'meta-artist', true ); ?></p>
               </div>
             </div>
-          </li>
+          </a>
 
         <?php
         endwhile;
         ?>
-
-      </ul>
-
-      <?php
-    endif;
+      </div>
+  <?php
+  endif;
   ?>
 </div>

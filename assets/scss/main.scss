@@ -60,9 +60,20 @@ dl {
     animation: slideup 0.3s forwards;
 }
 
+#latest-releases p {
+  overflow: hidden;
+  text-overflow: ellipsis;
+  width: 90%;
+  white-space: nowrap;
+}
+
 #latest-releases ul.list-group {
   border: 1px solid #bbb;
   border-radius: 5px;
+}
+
+.latest-releases-heading {
+  background: #eee;
 }
 
 .cover {
