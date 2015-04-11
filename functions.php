@@ -48,6 +48,14 @@ function label_post_type() {
 }
 add_action( 'init', 'label_post_type' );
 
+function register_musicalibre_menus() {
+  register_nav_menus(
+    array(
+      'footer-menu' => 'Menú de pie de pagina'
+    )
+  );
+}
+add_action( 'init', 'register_musicalibre_menus' );
 
 function musicalibre_scripts() {
   wp_enqueue_script( 'main', get_template_directory_uri() . '/assets/js/main.js', array( 'jquery' ) );

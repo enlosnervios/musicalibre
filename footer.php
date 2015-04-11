@@ -1,13 +1,11 @@
           <nav id="footer" class="navbar navbar-default navbar-fixed-bottom">
-            <div class="container">
-              <ul class="list-inline pull-right">
-                <li>Acerca de Musicalibre.uy</li>
-                <li>Sobre Cultura Libre</li>
-                <li>Código fuente</li>
-                <li>Aviso Legal</li>
-                <li>Contacto</li>
-              </ul>
-            </div>
+            <?php
+            wp_nav_menu( array(
+              'theme_location' => "footer-menu",
+              'container_class' => "container",
+              'menu_class' => "list-inline pull-right"
+            ) );
+            ?>
           </nav>
         </div>
     </body>
