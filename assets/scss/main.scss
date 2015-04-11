@@ -87,6 +87,23 @@ dl {
   line-height: 0.9em;
 }
 
+#album-detail {
+  margin-top: 30px;
+}
+
+#album-detail .media-heading {
+  border-bottom: 1px solid #ccc;
+  margin-bottom: 50px;
+}
+
+#album-detail .media-heading h2 {
+  margin-top: 0px;
+}
+
+#album-detail .media-left {
+  padding-right: 50px;
+}
+
 .cover {
   background: #eee;
   padding-bottom: 16%;
