@@ -45,6 +45,11 @@ dl {
   padding-top: 5px;
 }
 
+#footer a {
+  color: $text-color;
+  text-decoration: none;
+}
+
 #latest-releases {
   bottom: -100px;
   margin-bottom: 15px;
@@ -52,7 +57,7 @@ dl {
 }
 
 #latest-releases:hover {
-    animation: slideup 1s forwards;
+    animation: slideup 0.3s forwards;
 }
 
 #latest-releases ul.list-group {
