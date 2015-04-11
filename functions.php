@@ -27,7 +27,7 @@ function artist_post_type() {
       ),
       'public' => true,
       'has_archie' => false,
-      'supports' => array( 'title', 'editor' )
+      'supports' => array( 'title', 'editor', 'thumbnail' )
     )
   );
 }

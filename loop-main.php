@@ -1,5 +1,4 @@
 <div id="cover-container" class="row">
-  <div id="cover-overlay"></div>
   <?php
     $albums = new WP_Query( array( 'post_type' => 'album' ) );
     if ( $albums->have_posts() ) :

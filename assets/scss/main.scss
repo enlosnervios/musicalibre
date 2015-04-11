@@ -2,6 +2,18 @@
 @import url(http://fonts.googleapis.com/css?family=Open+Sans:300,700,300italic);
 @import url(http://fonts.googleapis.com/css?family=Open+Sans+Condensed:300,700,300italic);
 
+@keyframes slideup {
+  to {
+    bottom: 0px;
+  }
+}
+
+@keyframes fadeIn {
+  to {
+    opacity: 0.9;
+  }
+}
+
 body {
   font-family: 'Open Sans', sans-serif;
   padding-bottom: 30px;
@@ -12,43 +24,34 @@ dl {
 }
 
 #search-form  {
-  #search-bar {
-    border-right: 0px;
-  }
-
   .dashicons-search {
     color: #ccc;
   }
 }
 
-#presentation {
-  background: #fff;
-  box-shadow: 0px 5px 15px #000;
-  font-family: 'Open Sans Condensed', sans-serif;
-  padding: 15px;
-  position: fixed;
-  width: 100%;
-  z-index: 1000;
-}
-
-#cover-container {
+#main-container {
   margin-bottom: $navbar-height;
   margin-top: $navbar-height;
 }
 
-#cover-overlay {
-  background: #000;
-  height: 100%;
-  width: 100%;
-  position: fixed;
-  opacity: 0.8;
-  z-index: 900;
+#presentation {
+  font-family: 'Open Sans Condensed', sans-serif;
+  padding: 15px;
 }
 
 #footer {
   font-size: small;
   min-height: 30px !important;
   padding-top: 5px;
+}
+
+#latest-releases {
+  bottom: -100px;
+  margin-bottom: 15px;
+}
+
+#latest-releases:hover {
+    animation: slideup 1s forwards;
 }
 
 .cover {
@@ -64,12 +67,31 @@ dl {
 }
 
 .album-info {
-  background: #111;
   color: #f1f1f1;
+  font-size: 0.8em;
   padding: 5px 10px;
   position: absolute;
   opacity: 0.9;
   bottom: 10px;
   left: 0;
   width: 100%;
+}
+
+.album-info-index {
+  z-index: 10;
+}
+
+.album-info-background {
+  background: #111;
+  color: transparent;
+  opacity: 0.3;
+  z-index: 0;
+}
+
+.cover:hover .album-info-background{
+    animation: fadeIn 0.5s forwards;
+}
+
+.album-item {
+  padding: 0px !important;
 }
