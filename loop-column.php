@@ -12,7 +12,7 @@
           <li class="album-item list-group-item">
             <div class="media">
               <div class="media-left">
-                <a href="#">
+                <a href="<?php the_permalink(); ?>">
                   <?php echo get_the_post_thumbnail( $post->ID, array( 50, 50 ), array( 'class' => "media-object" ) ); ?>
                 </a>
               </div>
