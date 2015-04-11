@@ -9,7 +9,7 @@
         <?php
         while ( $latest_releases->have_posts() ) : $latest_releases->the_post(); ?>
 
-          <a class="album-item list-group-item" href="#">
+          <a class="album-item list-group-item" href="<?php the_permalink(); ?>">
             <div class="media">
               <div class="media-left">
                 <?php echo get_the_post_thumbnail( $post->ID, array( 50, 50 ), array( 'class' => "media-object" ) ); ?>
