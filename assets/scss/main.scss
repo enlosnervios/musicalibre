@@ -72,8 +72,19 @@ dl {
   border-radius: 5px;
 }
 
-.latest-releases-heading {
+#latest-releases .latest-releases-heading {
   background: #eee;
+  font-family: 'Open Sans Condensed', sans-serif;
+  text-transform: uppercase;
+}
+
+#latest-releases .media-heading {
+  font-family: 'Open Sans Condensed', sans-serif;
+}
+
+#latest-releases .meta-artist {
+  font-size: 0.9em;
+  line-height: 0.9em;
 }
 
 .cover {

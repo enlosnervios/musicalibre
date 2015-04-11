@@ -16,7 +16,7 @@
               </div>
               <div class="media-body">
                 <p class="media-heading"><strong><?php the_title(); ?></strong></p>
-                <p><?php echo get_post_meta( $post->ID, 'meta-artist', true ); ?></p>
+                <p class="meta-artist"><?php echo get_post_meta( $post->ID, 'meta-artist', true ); ?></p>
               </div>
             </div>
           </a>
